@@ -1,0 +1,36 @@
+# Copyright © 2026 NVest Analytics, Inc. All rights reserved.
+# Recall status page (Upptime). Public on purpose: holds only public addresses and uptime figures.
+# Reference: https://upptime.js.org/docs/configuration
+
+owner: kevinsctx
+repo: recall-status
+
+sites:
+  - name: Recall (production)
+    url: https://recallworkspace.com/health
+    expectedStatusCodes:
+      - 200
+  - name: Recall (production dependencies)
+    url: https://recallworkspace.com/ready
+    expectedStatusCodes:
+      - 200
+  - name: Recall (staging)
+    url: https://recall.nvestanalytics.com/health
+    expectedStatusCodes:
+      - 200
+  - name: Recall assets
+    url: https://assets.recallworkspace.com/marketing/recall/social/prelaunch/shared/start-free-v1.png
+    check: "http"
+
+status-website:
+  name: Recall Status
+  theme: dark
+  navbar:
+    - title: Status
+      href: /
+    - title: App
+      href: https://recallworkspace.com
+
+# Downtime opens an issue here, assigned to:
+assignees:
+  - kevinsctx
